@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "565539C92E52E72EE88A3155406D3F264DDEBD43",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "565539C92E52E72EE88A3155406D3F264DDEBD43" : 9223372036854775807,
+    "E955CF6293378C90EB78E5A094E275F3212B559C" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "981ACFAE-A1DF-4A1D-B6D8-18C45BBD9366",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "565539C92E52E72EE88A3155406D3F264DDEBD43" : "JiKeScrollView\/",
+    "E955CF6293378C90EB78E5A094E275F3212B559C" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "JiKeScrollView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "JiKeScrollView\/JiKeScrollView.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lilongcnc\/JiKeScrollView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "565539C92E52E72EE88A3155406D3F264DDEBD43"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lilongcnc\/TestDemo0322.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E955CF6293378C90EB78E5A094E275F3212B559C"
+    }
+  ]
+}
