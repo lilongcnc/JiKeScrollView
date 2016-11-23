@@ -109,7 +109,7 @@
     _myCoverView = ({
         UIView *coverView = [UIView new];
         coverView.frame = _myImageView0.frame;
-//        coverView.backgroundColor = [UIColor blackColor];
+        coverView.backgroundColor = [UIColor blackColor];
         coverView.alpha = 0.f;
         coverView.layer.cornerRadius = 5;
         coverView.hidden = YES;

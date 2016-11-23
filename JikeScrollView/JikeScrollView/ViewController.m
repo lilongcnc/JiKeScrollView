@@ -90,7 +90,7 @@
     _myJikeScrollView.myFirstShowLabelDesArray = @[@"首次传入的描述文字1",@"首次传入的描述文字2",@"首次传入的描述文字3"];
     
     
-    [NSTimer scheduledTimerWithTimeInterval:0.1f
+    [NSTimer scheduledTimerWithTimeInterval:2.0f
                                      target:self
                                    selector:@selector(btnOnClick)
                                    userInfo:nil
