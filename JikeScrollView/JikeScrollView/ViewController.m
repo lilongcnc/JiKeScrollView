@@ -134,9 +134,9 @@
     
     //第一次请求到的数据
     _myScrollImageView.myFirstShowImageLink = @"0";
-    _myJiKeScrollLabel.myFirstShowLabelDes = @"xx";
+    _myJiKeScrollLabel.myFirstShowLabelDes = @"首次传入的描述文字";
     
-//    [NSTimer scheduledTimerWithTimeInterval:1.0f
+//    [NSTimer scheduledTimerWithTimeInterval:1.5f
 //                                     target:self
 //                                   selector:@selector(btnOnClick)
 //                                   userInfo:nil

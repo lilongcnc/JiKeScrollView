@@ -132,7 +132,7 @@ static CGFloat const labelW = 113;
     _myLabel0.alpha = 1;
     _myLabel1.alpha = 1;
     
-    [UIView animateWithDuration:0.5f delay:0.2f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.6f delay:0.1f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
         isRunning = YES;
         
@@ -158,7 +158,7 @@ static CGFloat const labelW = 113;
             if (_scrollIndex == 1) {
                 _myLabel1.y = _originalCenterY;
 
-                [UIView animateWithDuration:0.4 delay:0.3f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [UIView animateWithDuration:0.5f delay:0.2f options:UIViewAnimationOptionCurveEaseInOut animations:^{
                     _myLabel0.alpha = 0.2;
                     _myLabel0.y = _originalDownY;
                     
@@ -175,7 +175,7 @@ static CGFloat const labelW = 113;
                 
                 _myLabel0.y = _originalCenterY;
                 
-                [UIView animateWithDuration:0.4 delay:0.3f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [UIView animateWithDuration:0.5f delay:0.2f options:UIViewAnimationOptionCurveEaseInOut animations:^{
                     _myLabel1.alpha = 0.2;
                     _myLabel1.y = _originalDownY;
                     
@@ -194,13 +194,8 @@ static CGFloat const labelW = 113;
             }
             
         }
-
-        
         
         NSLog(@"%@",currentShowDes);
-//        if ([self isInOneWholeLine:currentShowDes]) {
-//            NSLog(@"执行第二个动画");
-//        }
         
     } completion:^(BOOL finished) {
         
