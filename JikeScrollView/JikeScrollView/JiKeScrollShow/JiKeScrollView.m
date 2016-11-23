@@ -114,16 +114,17 @@
 
 //执行动画
 - (void)setFisrtJikeScrollImageData:(NSArray *)data{
+    LxDBAnyVar(data);
     for (int i = 0; i < data.count; i++) {
         JiKeSignalScrollView *signView = _myShowViewArray[i];
-        signView.myFirstShowImageLink = data[i];
+        signView.myFirstShowImageLinkArray = data[i];
         
     }
 }
 - (void)setFisrtJikeScrollLabelData:(NSArray *)data{
     for (int i = 0; i < data.count; i++) {
         JiKeSignalScrollView *signView = _myShowViewArray[i];
-        signView.myFirstShowLabelDes = data[i];
+        signView.myFirstShowLabelDesArray = data[i];
     }
 }
 

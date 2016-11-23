@@ -200,6 +200,7 @@
                 _myLabel0.alpha = 0;
                 _myLabel0.y = _originalTopY;
                 _myLabel0.alpha = 1;
+                _myLabel0.text = [self getRealShowStr:_myNextShowLabelDes];
                 
                 currentShowDes = _myLabel1.text;
             }else if(_scrollIndex == 0){
@@ -207,11 +208,11 @@
                 _myLabel1.alpha = 0;
                 _myLabel1.y = _originalTopY;
                 _myLabel1.alpha = 1;
+                _myLabel1.text = [self getRealShowStr:_myNextShowLabelDes];
                 
                 currentShowDes = _myLabel0.text;
             }
             NSLog(@"--------- 结束0");
-
             
             isRunning = NO;
         }
@@ -231,11 +232,13 @@
 
 
 #pragma mark ================ 处理数据 ================
-
--(void)setMyFirstShowLabelDes:(NSString *)myFirstShowLabelDes{
-    _myFirstShowLabelDes = myFirstShowLabelDes;
-    currentShowDes = myFirstShowLabelDes;
-    _myLabel0.text = [self getRealShowStr:myFirstShowLabelDes];
+-(void)setMyFirstShowLabelDesArray:(NSArray *)myFirstShowLabelDesArray{
+    if(myFirstShowLabelDesArray == nil || myFirstShowLabelDesArray.count < 2)
+        ULog(@"请设置两张初始化图片的描述");
+    _myFirstShowLabelDesArray = myFirstShowLabelDesArray;
+    currentShowDes = myFirstShowLabelDesArray[0];
+    _myLabel0.text = [self getRealShowStr:myFirstShowLabelDesArray[0]];
+    _myLabel1.text = [self getRealShowStr:myFirstShowLabelDesArray[1]];
     
 }
 
@@ -246,21 +249,15 @@
     if (isRunning){
         NSLog(@"---------------------------  Label动画ing ------------------------");
         return;
-}
+    }
 
     //数据处理
-    if(_myFirstShowLabelDes == nil)
-        ULog(@"还是设置第一个图片描述");
+    if(_myFirstShowLabelDesArray == nil || _myFirstShowLabelDesArray.count < 2)
+        ULog(@"还是设置完整图片描述吧");
     
     _myNextShowLabelDes = myNextShowLabelDes;
     
-    if (_scrollIndex == 0)
-        _myLabel1.text = [self getRealShowStr:myNextShowLabelDes];
-    else if (_scrollIndex == 1)
-        _myLabel0.text = [self getRealShowStr:myNextShowLabelDes];
-    
     [self beiginScrollDown];
-    
 }
 
 

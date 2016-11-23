@@ -93,26 +93,18 @@
         [self addSubview:scrollLabel];
         scrollLabel;
     });
-    
-    
-    //第一次请求到的数据
-    _myJiKeScrollImageView.myFirstShowImageLink = @"0";
-    _myJiKeScrollLabel.myFirstShowLabelDes = @"首次传入的描述文字";
 }
 
 
 
 
 //初始化数据
--(void)setMyFirstShowLabelDes:(NSString *)myFirstShowLabelDes{
-    _myFirstShowLabelDes = myFirstShowLabelDes;
-    _myJiKeScrollLabel.myFirstShowLabelDes = myFirstShowLabelDes;
+-(void)setMyFirstShowLabelDesArray:(NSArray *)myFirstShowLabelDesArray{
+    _myJiKeScrollLabel.myFirstShowLabelDesArray = myFirstShowLabelDesArray;
 }
 
-
--(void)setMyFirstShowImageLink:(NSString *)myFirstShowImageLink{
-    _myFirstShowImageLink = myFirstShowImageLink;
-    _myJiKeScrollImageView.myFirstShowImageLink = myFirstShowImageLink;
+-(void)setMyFirstShowImageLinkArray:(NSArray *)myFirstShowImageLinkArray{
+    _myJiKeScrollImageView.myFirstShowImageLinkArray = myFirstShowImageLinkArray;
     
 }
 

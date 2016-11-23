@@ -12,8 +12,8 @@
 
 -(instancetype)initWithFrame:(CGRect)frame withScrollLabelSize:(CGSize)labelSize;
 
-@property (nonatomic,copy) NSString *myFirstShowImageLink;
-@property (nonatomic,copy) NSString *myFirstShowLabelDes;
+@property (nonatomic,strong) NSArray *myFirstShowImageLinkArray;
+@property (nonatomic,strong) NSArray *myFirstShowLabelDesArray;
 
 
 @property (nonatomic,copy) NSString *myNextShowImageLink;

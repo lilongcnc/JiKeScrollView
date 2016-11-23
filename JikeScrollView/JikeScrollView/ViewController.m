@@ -47,7 +47,7 @@
                            @[@"鲍勃·迪伦",@"《神探夏洛克》第四季消息",@"我的狂怒你你驾驭不住"],
                            @[@"Pantone发现了新东西",@"国服新网游测试预告布了新的流行色",@"张碧池小姐分享了新表情"],
                            @[@"每日新闻联播头条",@"明星大V秒删微博提醒",@"每日一首提神歌曲"],
-                           @[@"这些微博的评论更好",@"\"人人都是产品经理\"精华文章",@"时令水果上市提醒"],
+                           @[@"老司机带带我",@"\"人人都是产品经理\"精华文章",@"时令水果上市提醒"],
                            ];
     }
     return _tempImageDesDataArray;
@@ -86,15 +86,24 @@
         scrollView;
     });
     
-    _myJikeScrollView.myFirstShowImageLinkArray = @[@"0",@"1",@"3"];
-    _myJikeScrollView.myFirstShowLabelDesArray = @[@"首次传入的描述文字1",@"首次传入的描述文字2",@"首次传入的描述文字3"];
+    
+    _myJikeScrollView.myFirstShowImageLinkArray = @[
+                                                  @[@"11",@"12"],
+                                                  @[@"13",@"14"],
+                                                  @[@"15",@"16"]
+                                                    ];
+    _myJikeScrollView.myFirstShowLabelDesArray = @[
+                                                  @[@"左边初始描述文字1",@"左边初始描述文字2"],
+                                                  @[@"中间初始描述文字3",@"中间初始描述文字4"],
+                                                  @[@"右边初始描述文字5",@"右边初始描述文字6"]
+                                                    ];
     
     
-    [NSTimer scheduledTimerWithTimeInterval:2.0f
-                                     target:self
-                                   selector:@selector(btnOnClick)
-                                   userInfo:nil
-                                    repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:2.0f
+//                                     target:self
+//                                   selector:@selector(btnOnClick)
+//                                   userInfo:nil
+//                                    repeats:YES];
     
 }
 

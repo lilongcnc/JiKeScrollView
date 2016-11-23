@@ -156,8 +156,10 @@
         if(finished){
             if (_scrollIndex == 1) {
                 _myImageView0.y = _originalTopY;
+                _myImageView0.image = [UIImage imageNamed:_myNextShowImageLink];
             }else if(_scrollIndex == 0){
                 _myImageView1.y = _originalTopY;
+                _myImageView1.image = [UIImage imageNamed:_myNextShowImageLink];
             }
             //蒙版归位
             _myCoverView.hidden = YES;
@@ -182,11 +184,13 @@
 
 
 #pragma mark ================ 传入数据处理 ================
-
--(void)setMyFirstShowImageLink:(NSString *)myFirstShowImageLink{
-    _myFirstShowImageLink = myFirstShowImageLink;
+-(void)setMyFirstShowImageLinkArray:(NSArray *)myFirstShowImageLinkArray{
+    if(myFirstShowImageLinkArray == nil || myFirstShowImageLinkArray.count < 2)
+        ULog(@"请设置两张初始化图片");
     
-    _myImageView0.image = [UIImage imageNamed:myFirstShowImageLink];
+    _myFirstShowImageLinkArray = myFirstShowImageLinkArray;
+    _myImageView0.image = [UIImage imageNamed:myFirstShowImageLinkArray[0]];
+    _myImageView1.image = [UIImage imageNamed:myFirstShowImageLinkArray[1]];
 }
 
 
@@ -197,15 +201,10 @@
         return;
     
     //处理数据
-    if(_myFirstShowImageLink == nil || [_myFirstShowImageLink isEqualToString:@""])
-        ULog(@"还是先设置首张图片");
+    if(_myFirstShowImageLinkArray == nil || _myFirstShowImageLinkArray.count < 2)
+        ULog(@"还是先设置两张初始化图片吧");
     
     _myNextShowImageLink = myNextShowImageLink;
-    
-    if (_scrollIndex == 0)
-        _myImageView1.image = [UIImage imageNamed:myNextShowImageLink];
-    else if (_scrollIndex == 1)
-        _myImageView0.image = [UIImage imageNamed:myNextShowImageLink];
     
     [self beiginScrollDown];
 }

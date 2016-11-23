@@ -15,7 +15,7 @@
  设置首次进入程序先显示的图片名称或者链接(自行扩展增加网络图片加载)
  ,不执行滚动
  */
-@property (nonatomic,copy) NSString *myFirstShowImageLink;
+@property (nonatomic,strong) NSArray *myFirstShowImageLinkArray;
 
 
 /**
