@@ -139,15 +139,12 @@ static CGFloat const iconWH = 110;
     [self runAnimation];
 }
 
+
 - (void)runAnimation{
-
-
     
-//    NSLog(@"------------------------------");
-    [UIView animateWithDuration:0.6f delay:0.1f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        
+    void (^changeBlock)() = ^(){
         isRunning = YES;
-//        NSLog(@"开始执行");
+        //        NSLog(@"开始执行");
         if (_scrollIndex == 1) {
             _myImageView1.y = _originalCenterY;
             _myImageView0.y = _originalDownY;
@@ -164,25 +161,35 @@ static CGFloat const iconWH = 110;
         _myCoverView.hidden = NO;
         _myCoverView.alpha = 0.3f;
         _myCoverView.y =_originalDownY;
-        
-    } completion:^(BOOL finished) {
-        if (_scrollIndex == 1) {
-            _myImageView0.y = _originalTopY;
-        }else if(_scrollIndex == 0){
-            _myImageView1.y = _originalTopY;
+    };
+    
+    
+    void (^completionBlock)(BOOL) = ^(BOOL finished){
+        if(finished){
+            if (_scrollIndex == 1) {
+                _myImageView0.y = _originalTopY;
+            }else if(_scrollIndex == 0){
+                _myImageView1.y = _originalTopY;
+            }
+            //蒙版归位
+            _myCoverView.hidden = YES;
+            _myCoverView.alpha = 0.f;
+            _myCoverView.y =_originalCenterY;
+            
+            isRunning = NO;
         }
-        //蒙版归位
-        _myCoverView.hidden = YES;
-        _myCoverView.alpha = 0.f;
-        _myCoverView.y =_originalCenterY;
-        
-         isRunning = NO;
-//        NSLog(@"复位...");
-    }];
+    };
+    
+    
+    [self doAnimation:changeBlock completion:completionBlock];
+
 }
 
 
 
+- (void)doAnimation:(void(^)())changeBK completion:(void(^)(BOOL finished))competionBK{
+    [UIView animateWithDuration:0.6f delay:0.1f options:UIViewAnimationOptionCurveEaseInOut animations:changeBK completion:competionBK];
+}
 
 
 

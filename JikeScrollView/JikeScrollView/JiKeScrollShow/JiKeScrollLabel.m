@@ -132,14 +132,21 @@ static CGFloat const labelW = 113;
     _myLabel0.alpha = 1;
     _myLabel1.alpha = 1;
     
-    [UIView animateWithDuration:0.6f delay:0.1f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    
+    
+
+
+    void (^changeBlock)() = ^(){
+        
+        NSLog(@"%@",currentShowDes);
         
         isRunning = YES;
-        
         if (![self isInOneWholeLine:currentShowDes]) {
+            NSLog(@"--------- 开始0");
             //第一个动画
             if (_scrollIndex == 1) {
                 _myLabel1.y = _originalCenterY;
+                
                 _myLabel0.y = _originalDownY;
                 _myLabel0.alpha = 0.3;
                 
@@ -150,77 +157,82 @@ static CGFloat const labelW = 113;
                 _myLabel1.y = _originalDownY;
                 _myLabel1.alpha = 0.3;
                 
-                _scrollIndex = 0;
+                _scrollIndex = 0; //标记归0
             }
             
         }else{
-            NSLog(@"执行第二个动画");
-            if (_scrollIndex == 1) {
-                _myLabel1.y = _originalCenterY;
+            //叠影动画逻辑
+            //当前正在显示的label的动画执行时间比即将显示的label的动画执行时间延迟一些执行,产生叠影效果
+            NSLog(@"动画2");
 
-                [UIView animateWithDuration:0.5f delay:0.2f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            if (_scrollIndex == 1) {
+                
+                _myLabel1.y = _originalCenterY;
+                
+                void (^overlapChangeBlock)() = ^(){
                     _myLabel0.alpha = 0.2;
                     _myLabel0.y = _originalDownY;
-                    
-                } completion:^(BOOL finished) {
-                    _myLabel0.alpha = 0;
-                    _myLabel0.y = _originalTopY;
-                    _myLabel0.alpha = 1;
-                    currentShowDes = _myLabel1.text;
-                    
-                    isRunning = NO;
-                }];
+                };
+                
+                
+                [self doAnimationWithDuration:0.4f delay:0.2f change:overlapChangeBlock completion:nil];
                 
             }else if(_scrollIndex == 2){
-                
+
                 _myLabel0.y = _originalCenterY;
                 
-                [UIView animateWithDuration:0.5f delay:0.2f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                void (^overlapChangeBlock)() = ^(){
                     _myLabel1.alpha = 0.2;
                     _myLabel1.y = _originalDownY;
-                    
-                } completion:^(BOOL finished) {
-                    _myLabel1.alpha = 0;
-                    _myLabel1.y = _originalTopY;
-                    _myLabel1.alpha = 1;
-                    currentShowDes = _myLabel0.text;
-                    
-                    isRunning = NO;
-                    
-                }];
+                };
                 
-                _scrollIndex = 0;
+                [self doAnimationWithDuration:0.4f delay:0.2f change:overlapChangeBlock completion:nil];
                 
-            }
-            
+                _scrollIndex = 0; //标记归0
+            }            
         }
-        
-        NSLog(@"%@",currentShowDes);
-        
-    } completion:^(BOOL finished) {
-        
-        if (![self isInOneWholeLine:currentShowDes]) {
-            //第一个动画
+
+    };
+    
+    
+    
+    void (^completionBlock)(BOOL) =  ^(BOOL finished){
+        if(finished){
+            
+                //第一个动画
             if (_scrollIndex == 1) {
+                
                 _myLabel0.alpha = 0;
                 _myLabel0.y = _originalTopY;
                 _myLabel0.alpha = 1;
                 
                 currentShowDes = _myLabel1.text;
             }else if(_scrollIndex == 0){
+                
                 _myLabel1.alpha = 0;
                 _myLabel1.y = _originalTopY;
                 _myLabel1.alpha = 1;
+                
                 currentShowDes = _myLabel0.text;
             }
+            NSLog(@"--------- 结束0");
+
+            
             isRunning = NO;
-        }else{
-            //第二个动画
         }
         
-    }];
+        
+    };
+
+    
+    [self doAnimationWithDuration:0.6f delay:0.1f change:changeBlock completion:completionBlock];
+    
 }
 
+
+- (void)doAnimationWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay change:(void(^)())changeBK completion:(void(^)(BOOL finished))competionBK{
+    [UIView animateWithDuration:duration delay:delay options:UIViewAnimationOptionCurveEaseInOut animations:changeBK completion:competionBK];
+}
 
 
 #pragma mark ================ 处理数据 ================
@@ -236,9 +248,11 @@ static CGFloat const labelW = 113;
 -(void)setMyNextShowLabelDes:(NSString *)myNextShowLabelDes{
     
     //保证动画当前顺序执行
-    if (isRunning)
+    if (isRunning){
+        NSLog(@"---------------------------  Label动画ing ------------------------");
         return;
-    
+}
+
     //数据处理
     if(_myFirstShowLabelDes == nil)
         ULog(@"还是设置第一个图片描述");

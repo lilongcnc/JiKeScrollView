@@ -136,14 +136,13 @@
     _myScrollImageView.myFirstShowImageLink = @"0";
     _myJiKeScrollLabel.myFirstShowLabelDes = @"首次传入的描述文字";
     
-//    [NSTimer scheduledTimerWithTimeInterval:1.5f
+//    [NSTimer scheduledTimerWithTimeInterval:0.1f
 //                                     target:self
 //                                   selector:@selector(btnOnClick)
 //                                   userInfo:nil
 //                                    repeats:YES];
     
 }
-
 
 
 
