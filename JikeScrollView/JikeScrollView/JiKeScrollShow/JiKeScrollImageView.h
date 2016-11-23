@@ -21,7 +21,7 @@
 /**
  下一张要显示的图片名称或者链接
  */
-@property (nonatomic,copy) NSString *myWouldShowImageLink;
+@property (nonatomic,copy) NSString *myNextShowImageLink;
 
 //- (void)beiginScrollDown;
 @end

@@ -31,14 +31,6 @@
 }
 
 
-- (instancetype)init {
-    if (self = [super init]) {
-        //初始化控件
-        [self initSubViews];
-    }
-    return self;
-}
-
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         //初始化控件
@@ -58,19 +50,18 @@
 
 
 
-static CGFloat const iconWH = 110;
 - (NSArray *)myImageViewArray
 {
     if (!_myImageViewArray) {
         
         
         UIImageView *iconView0 = [[UIImageView alloc] init];
-        iconView0.image = [UIImage imageNamed:@"test2"];
+        iconView0.image = [UIImage imageNamed:@"tempBack"];
         iconView0.layer.cornerRadius = 5;
         iconView0.layer.masksToBounds = YES;
         
         UIImageView *iconView1 = [[UIImageView alloc] init];
-        iconView1.image = [UIImage imageNamed:@"test3"];
+        iconView1.image = [UIImage imageNamed:@"tempBack"];
         iconView1.layer.cornerRadius = 5;
         iconView1.layer.masksToBounds = YES;
         
@@ -82,20 +73,17 @@ static CGFloat const iconWH = 110;
 
 
 - (void)initSubViews{
-
     
     
-    CGFloat topMargin = 0;
-    CGFloat showViewHeight = iconWH;
+    CGFloat topMargin = LLTBMargin;
+    CGFloat iconWH = self.frame.size.width;
     
-    _originalTopY = topMargin-iconWH;
-    _originalCenterY = topMargin;
-    _originalDownY = topMargin+iconWH;
+    _originalTopY = -iconWH;
+    _originalCenterY = 0;
+    _originalDownY = iconWH;
     
     
-    self.width = self.height =  showViewHeight;
-    
-    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, iconWH, iconWH)];
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, topMargin, iconWH, iconWH)];
     backView.clipsToBounds = YES;
     [self addSubview:backView];
     
@@ -121,7 +109,7 @@ static CGFloat const iconWH = 110;
     _myCoverView = ({
         UIView *coverView = [UIView new];
         coverView.frame = _myImageView0.frame;
-        coverView.backgroundColor = [UIColor blackColor];
+//        coverView.backgroundColor = [UIColor blackColor];
         coverView.alpha = 0.f;
         coverView.layer.cornerRadius = 5;
         coverView.hidden = YES;
@@ -203,8 +191,7 @@ static CGFloat const iconWH = 110;
 
 
 //在设置myFirstShowImageLink之后,传入后自动调用下一个张操作
--(void)setMyWouldShowImageLink:(NSString *)myWouldShowImageLink{
-    
+-(void)setMyNextShowImageLink:(NSString *)myNextShowImageLink{
     //保证动画当前顺序执行
     if (isRunning)
         return;
@@ -213,12 +200,12 @@ static CGFloat const iconWH = 110;
     if(_myFirstShowImageLink == nil || [_myFirstShowImageLink isEqualToString:@""])
         ULog(@"还是先设置首张图片");
     
-    _myWouldShowImageLink = myWouldShowImageLink;
+    _myNextShowImageLink = myNextShowImageLink;
     
     if (_scrollIndex == 0)
-        _myImageView1.image = [UIImage imageNamed:myWouldShowImageLink];
+        _myImageView1.image = [UIImage imageNamed:myNextShowImageLink];
     else if (_scrollIndex == 1)
-        _myImageView0.image = [UIImage imageNamed:myWouldShowImageLink];
+        _myImageView0.image = [UIImage imageNamed:myNextShowImageLink];
     
     [self beiginScrollDown];
 }

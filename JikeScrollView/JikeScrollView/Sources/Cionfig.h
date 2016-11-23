@@ -33,5 +33,14 @@
 #define LLScreenWidth            ([[UIScreen mainScreen] bounds].size.width)
 #define LLScreenHeight           ([[UIScreen mainScreen] bounds].size.height)
 
+#define LLLabelFont [UIFont systemFontOfSize:12]
+#define LLTBMargin 13 //signalScrollView顶部和底部间距
+#define LLLRMargin 15 //signalScrollView左右边界间距
+#define LLhorizontalMargin 10  //signalScrollView水平间距
+#define LLverticalMargin 15  //signalScrollView竖直间
+
+
+
+#import "LxDBAnything.h"
 
 #endif /* Cionfig_h */

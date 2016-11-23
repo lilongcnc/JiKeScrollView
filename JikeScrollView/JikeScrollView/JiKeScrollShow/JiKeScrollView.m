@@ -7,15 +7,138 @@
 //
 
 #import "JiKeScrollView.h"
+#import "JiKeSignalScrollView.h"
+#import "Cionfig.h"
+
+@interface JiKeScrollView ()
+
+@property (nonatomic,strong) JiKeSignalScrollView *myJikeSignalScrollView;
+
+@property (nonatomic,strong) NSMutableArray *myShowViewArray;
+
+@end
 
 @implementation JiKeScrollView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        //初始化控件
+        [self initSubViews];
+    }
+    return self;
+}
+
+//不要xxx.frame = GRectmake()这样设置frame
+-(instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        //初始化控件
+        [self initSubViews];
+    }
+    return self;
+}
+
+
+
+- (void)initSubViews{
+//    CGFloat TBMargin = 13; //signalScrollView顶部和底部间距
+//    CGFloat LRMargin = 15; //signalScrollView左右边界间距
+//    CGFloat horizontalMargin = 10; //signalScrollView水平间距
+//    CGFloat verticalMargin = LRMargin; //signalScrollView竖直间距
+    
+    _myShowViewArray = [NSMutableArray arrayWithCapacity:3];
+
+    LxDBAnyVar(self.frame);
+    LxDBAnyVar(LLScreenWidth);
+    LxDBAnyVar(LLScreenHeight);
+    
+    CGFloat singalScrollViewWidth = (LLScreenWidth - LLLRMargin*2 - LLverticalMargin*2)*0.3333;
+    CGSize labelSize = [self getSizeWithStrig:@"测试" font:LLLabelFont maxSize:(CGSize){singalScrollViewWidth,MAXFLOAT}];
+    CGFloat singalScrollViewHeight = LLTBMargin*2 + LLhorizontalMargin + singalScrollViewWidth + labelSize.height*2;
+    
+    LxDBAnyVar(labelSize);
+    LxDBAnyVar(singalScrollViewWidth);
+    LxDBAnyVar(singalScrollViewHeight);
+
+    for (int i = 0; i < 3; i++) {
+        JiKeSignalScrollView *signalScrollView = [[JiKeSignalScrollView alloc] initWithFrame:(CGRect){LLLRMargin+(singalScrollViewWidth+LLverticalMargin)*i,0,singalScrollViewWidth,singalScrollViewHeight} withScrollLabelSize:labelSize];
+        [self addSubview:signalScrollView];
+//        signalScrollView.backgroundColor = [UIColor orangeColor];
+        [_myShowViewArray addObject:signalScrollView];
+    }
+    
+}
+
+
+- (CGSize)getSizeWithStrig:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize
+{
+    NSDictionary *attrs = @{NSFontAttributeName : font};
+    return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
+}
+
+
+//处理首次传入的数据
+-(void)setMyFirstShowLabelDesArray:(NSArray *)myFirstShowLabelDesArray{
+    if(myFirstShowLabelDesArray.count <3)
+        ULog(@"请传入三个图片描述");
+    
+    [self setFisrtJikeScrollLabelData:myFirstShowLabelDesArray];
+}
+
+-(void)setMyFirstShowImageLinkArray:(NSArray *)myFirstShowImageLinkArray{
+    if(myFirstShowImageLinkArray.count <3)
+        ULog(@"请传入三张图片的链接");
+    
+    [self setFisrtJikeScrollImageData:myFirstShowImageLinkArray];
+}
+
+
+
+//执行下次数据动画
+-(void)setMyNextShowLabelDesArray:(NSArray *)myNextShowLabelDesArray{
+    if(myNextShowLabelDesArray.count <3)
+        ULog(@"请传入下一个三个图片描述");
+    
+    [self runJikeScrollLabelView:myNextShowLabelDesArray];
+}
+
+
+-(void)setMyNextShowImageLinkArray:(NSArray *)myNextShowImageLinkArray{
+    if(myNextShowImageLinkArray.count <3)
+        ULog(@"请传入下一个三张图片的链接");
+    
+    [self runJikeScrollImageView:myNextShowImageLinkArray];
+}
+
+
+
+//执行动画
+- (void)setFisrtJikeScrollImageData:(NSArray *)data{
+    for (int i = 0; i < data.count; i++) {
+        JiKeSignalScrollView *signView = _myShowViewArray[i];
+        signView.myFirstShowImageLink = data[i];
+        
+    }
+}
+- (void)setFisrtJikeScrollLabelData:(NSArray *)data{
+    for (int i = 0; i < data.count; i++) {
+        JiKeSignalScrollView *signView = _myShowViewArray[i];
+        signView.myFirstShowLabelDes = data[i];
+    }
+}
+
+
+- (void)runJikeScrollImageView:(NSArray *)data{
+    for (int i = 0; i < data.count; i++) {
+        JiKeSignalScrollView *signView = _myShowViewArray[i];
+        signView.myNextShowImageLink = data[i];
+        
+    }
+}
+- (void)runJikeScrollLabelView:(NSArray *)data{
+    for (int i = 0; i < data.count; i++) {
+        JiKeSignalScrollView *signView = _myShowViewArray[i];
+        signView.myNextShowLabelDes = data[i];
+    }
+}
 @end

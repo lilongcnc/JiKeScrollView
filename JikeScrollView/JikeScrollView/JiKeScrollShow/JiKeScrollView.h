@@ -10,4 +10,17 @@
 
 @interface JiKeScrollView : UIView
 
+@property (nonatomic,strong) NSArray *myFirstShowImageLinkArray;
+@property (nonatomic,strong) NSArray *myFirstShowLabelDesArray;
+
+
+
+
+
+
+
+@property (nonatomic,strong) NSArray *myNextShowImageLinkArray;
+@property (nonatomic,strong) NSArray *myNextShowLabelDesArray;
+
+
 @end

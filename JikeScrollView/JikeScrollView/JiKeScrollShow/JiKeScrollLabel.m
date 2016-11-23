@@ -34,13 +34,6 @@
 }
 
 
-- (instancetype)init {
-    if (self = [super init]) {
-        //初始化控件
-        [self initSubViews];
-    }
-    return self;
-}
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
@@ -77,20 +70,22 @@
 }
 
 
-static CGFloat const labelH = 30;
-static CGFloat const labelW = 113;
+
 
 - (void)initSubViews{
 
+    CGFloat labelW = self.frame.size.width;
+    CGFloat labelH = self.frame.size.height;
+    
     CGFloat topMargin = 0;
+    
     _originalTopY = topMargin-labelH;
     _originalCenterY = topMargin;
     _originalDownY = topMargin+labelH;
     
-    CGFloat showLabelViewHeight = labelH;
-    UIFont *labelFont = [UIFont systemFontOfSize:12];
+    UIFont *labelFont = LLLabelFont;
     
-    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, labelW, showLabelViewHeight)];
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, labelW, labelH)];
     backView.clipsToBounds = YES;
     [self addSubview:backView];
     
@@ -274,7 +269,9 @@ static CGFloat const labelW = 113;
 }
 
 - (NSString *)getRealShowStr:(NSString *)str{
-    if (str.length <= 9) {
+    CGSize labelSize = [self getSizeWithStrig:str font:LLLabelFont maxSize:(CGSize){MAXFLOAT,MAXFLOAT}];
+
+    if (labelSize.width <= self.frame.size.width) {
         str = [str stringByAppendingString:@"\n"];
     }
     
@@ -283,6 +280,10 @@ static CGFloat const labelW = 113;
 
 
 
-
+- (CGSize)getSizeWithStrig:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize
+{
+    NSDictionary *attrs = @{NSFontAttributeName : font};
+    return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
+}
 
 @end
