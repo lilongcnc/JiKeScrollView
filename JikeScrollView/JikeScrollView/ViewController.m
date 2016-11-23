@@ -108,15 +108,24 @@
     
     
     //第一次请求到的数据
-    _myScrollImageView.myFirstShowImageLink = @"1";
+    _myScrollImageView.myFirstShowImageLink = @"0";
     _myJiKeScrollLabel.myFirstShowLabelDes = @"xx";
     
-    [NSTimer scheduledTimerWithTimeInterval:2.0f
-                                     target:self
-                                   selector:@selector(btnOnClick)
-                                   userInfo:nil
-                                    repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:1.0f
+//                                     target:self
+//                                   selector:@selector(btnOnClick)
+//                                   userInfo:nil
+//                                    repeats:YES];
     
+}
+
+
+
+
+- (NSArray *)getNextShowData{
+    dataShowIndex = dataShowIndex >= self.tempDataArray.count ? 0 : dataShowIndex;
+    NSArray *tempArr = self.tempDataArray[dataShowIndex];
+    return tempArr;
 }
 
 - (IBAction)btnOnClick {
@@ -125,15 +134,12 @@
     _myScrollImageView.myWouldShowImageLink = tempArr[0];
     _myJiKeScrollLabel.myNextShowLabelDes = tempArr[1];
     
-    dataShowIndex == self.tempDataArray.count ? 0 : dataShowIndex++;
+    dataShowIndex++;
+//    NSLog(@"- %d",dataShowIndex);
 }
 
 
 
-- (NSArray *)getNextShowData{
-    NSArray *tempArr = self.tempDataArray[dataShowIndex];
-    return tempArr;
-}
 
 
 - (void)didReceiveMemoryWarning {

@@ -35,6 +35,8 @@
 		89405BA41DE496560098D1DC /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405B921DE496560098D1DC /* UIView+Frame.m */; };
 		89405BAA1DE496890098D1DC /* JiKeScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405BA71DE496890098D1DC /* JiKeScrollImageView.m */; };
 		89405BAB1DE496890098D1DC /* JiKeScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405BA91DE496890098D1DC /* JiKeScrollLabel.m */; };
+		89A108731DE536B600C4066F /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A108721DE536B600C4066F /* 0.png */; };
+		89A108751DE5377600C4066F /* 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A108741DE5377600C4066F /* 17.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		89405BA71DE496890098D1DC /* JiKeScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeScrollImageView.m; sourceTree = "<group>"; };
 		89405BA81DE496890098D1DC /* JiKeScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiKeScrollLabel.h; sourceTree = "<group>"; };
 		89405BA91DE496890098D1DC /* JiKeScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeScrollLabel.m; sourceTree = "<group>"; };
+		89A108721DE536B600C4066F /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		89A108741DE5377600C4066F /* 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 		89405B7E1DE496560098D1DC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				89A108721DE536B600C4066F /* 0.png */,
 				89405B7F1DE496560098D1DC /* 1.png */,
 				89405B801DE496560098D1DC /* 10.png */,
 				89405B811DE496560098D1DC /* 11.png */,
@@ -205,6 +210,7 @@
 				89405B841DE496560098D1DC /* 14.png */,
 				89405B851DE496560098D1DC /* 15.png */,
 				89405B861DE496560098D1DC /* 16.png */,
+				89A108741DE5377600C4066F /* 17.png */,
 				89405B871DE496560098D1DC /* 18.png */,
 				89405B881DE496560098D1DC /* 2.png */,
 				89405B891DE496560098D1DC /* 3.png */,
@@ -299,6 +305,7 @@
 				TargetAttributes = {
 					89405B461DE4963A0098D1DC = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = ZHR3SCPQ6E;
 						ProvisioningStyle = Automatic;
 					};
 					89405B5F1DE4963A0098D1DC = {
@@ -342,6 +349,7 @@
 				89405B941DE496560098D1DC /* 10.png in Resources */,
 				89405B981DE496560098D1DC /* 14.png in Resources */,
 				89405B9E1DE496560098D1DC /* 4.png in Resources */,
+				89A108731DE536B600C4066F /* 0.png in Resources */,
 				89405B951DE496560098D1DC /* 11.png in Resources */,
 				89405B961DE496560098D1DC /* 12.png in Resources */,
 				89405BA01DE496560098D1DC /* 6.png in Resources */,
@@ -352,6 +360,7 @@
 				89405B991DE496560098D1DC /* 15.png in Resources */,
 				89405B9B1DE496560098D1DC /* 18.png in Resources */,
 				89405BA31DE496560098D1DC /* 9.png in Resources */,
+				89A108751DE5377600C4066F /* 17.png in Resources */,
 				89405B931DE496560098D1DC /* 1.png in Resources */,
 				89405B9A1DE496560098D1DC /* 16.png in Resources */,
 				89405B971DE496560098D1DC /* 13.png in Resources */,
@@ -534,7 +543,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZHR3SCPQ6E;
 				INFOPLIST_FILE = JiKeScrollView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lauren.JiKeScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -545,7 +556,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZHR3SCPQ6E;
 				INFOPLIST_FILE = JiKeScrollView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lauren.JiKeScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -617,6 +630,7 @@
 				89405B761DE4963A0098D1DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89405B771DE4963A0098D1DC /* Build configuration list for PBXNativeTarget "JiKeScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -625,6 +639,7 @@
 				89405B791DE4963A0098D1DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89405B7A1DE4963A0098D1DC /* Build configuration list for PBXNativeTarget "JiKeScrollViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -633,6 +648,7 @@
 				89405B7C1DE4963A0098D1DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -141,12 +141,13 @@ static CGFloat const iconWH = 110;
 
 - (void)runAnimation{
 
-    if (isRunning)
-        return;
+
     
+//    NSLog(@"------------------------------");
     [UIView animateWithDuration:0.6f delay:0.1f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
         isRunning = YES;
+//        NSLog(@"开始执行");
         if (_scrollIndex == 1) {
             _myImageView1.y = _originalCenterY;
             _myImageView0.y = _originalDownY;
@@ -176,7 +177,7 @@ static CGFloat const iconWH = 110;
         _myCoverView.y =_originalCenterY;
         
          isRunning = NO;
-        
+//        NSLog(@"复位...");
     }];
 }
 
@@ -197,6 +198,11 @@ static CGFloat const iconWH = 110;
 //在设置myFirstShowImageLink之后,传入后自动调用下一个张操作
 -(void)setMyWouldShowImageLink:(NSString *)myWouldShowImageLink{
     
+    //保证动画当前顺序执行
+    if (isRunning)
+        return;
+    
+    //处理数据
     if(_myFirstShowImageLink == nil || [_myFirstShowImageLink isEqualToString:@""])
         ULog(@"还是先设置首张图片");
     

@@ -127,9 +127,6 @@ static CGFloat const labelW = 113;
 
 - (void)runAnimation{
     
-    if (isRunning)
-        return;
-    
     _myLabel0.alpha = 1;
     _myLabel1.alpha = 1;
     
@@ -175,21 +172,26 @@ static CGFloat const labelW = 113;
 -(void)setMyFirstShowLabelDes:(NSString *)myFirstShowLabelDes{
     _myFirstShowLabelDes = myFirstShowLabelDes;
     
-    _myLabel0.text = myFirstShowLabelDes;
+    _myLabel0.text = [self getRealShowStr:myFirstShowLabelDes];;
 }
 
 
 -(void)setMyNextShowLabelDes:(NSString *)myNextShowLabelDes{
     
+    //保证动画当前顺序执行
+    if (isRunning)
+        return;
+    
+    //数据处理
     if(_myFirstShowLabelDes == nil)
         ULog(@"还是设置第一个图片描述");
     
     _myNextShowLabelDes = myNextShowLabelDes;
     
     if (_scrollIndex == 0)
-        _myLabel1.text = myNextShowLabelDes;
+        _myLabel1.text = [self getRealShowStr:myNextShowLabelDes];
     else if (_scrollIndex == 1)
-        _myLabel0.text = myNextShowLabelDes;
+        _myLabel0.text = [self getRealShowStr:myNextShowLabelDes];
     
     [self beiginScrollDown];
     
