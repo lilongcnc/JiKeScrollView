@@ -37,6 +37,7 @@
 		89405BAB1DE496890098D1DC /* JiKeScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405BA91DE496890098D1DC /* JiKeScrollLabel.m */; };
 		89A108731DE536B600C4066F /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A108721DE536B600C4066F /* 0.png */; };
 		89A108751DE5377600C4066F /* 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A108741DE5377600C4066F /* 17.png */; };
+		89A108781DE54CB600C4066F /* JiKeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A108771DE54CB600C4066F /* JiKeScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		89405BA91DE496890098D1DC /* JiKeScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeScrollLabel.m; sourceTree = "<group>"; };
 		89A108721DE536B600C4066F /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		89A108741DE5377600C4066F /* 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17.png; sourceTree = "<group>"; };
+		89A108761DE54CB600C4066F /* JiKeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JiKeScrollView.h; path = JikeScrollView/JiKeScrollShow/JiKeScrollView.h; sourceTree = SOURCE_ROOT; };
+		89A108771DE54CB600C4066F /* JiKeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JiKeScrollView.m; path = JikeScrollView/JiKeScrollShow/JiKeScrollView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 				89405BA71DE496890098D1DC /* JiKeScrollImageView.m */,
 				89405BA81DE496890098D1DC /* JiKeScrollLabel.h */,
 				89405BA91DE496890098D1DC /* JiKeScrollLabel.m */,
+				89A108761DE54CB600C4066F /* JiKeScrollView.h */,
+				89A108771DE54CB600C4066F /* JiKeScrollView.m */,
 			);
 			path = JiKeScrollShow;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				89405B4F1DE4963A0098D1DC /* AppDelegate.m in Sources */,
 				89405BAA1DE496890098D1DC /* JiKeScrollImageView.m in Sources */,
 				89405B4C1DE4963A0098D1DC /* main.m in Sources */,
+				89A108781DE54CB600C4066F /* JiKeScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

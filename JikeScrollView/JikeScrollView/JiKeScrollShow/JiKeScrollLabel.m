@@ -29,6 +29,8 @@
     CGFloat _originalCenterY;
     CGFloat _originalDownY;
     
+    NSString *currentShowDes;
+    
 }
 
 
@@ -133,34 +135,93 @@ static CGFloat const labelW = 113;
     [UIView animateWithDuration:0.5f delay:0.2f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
         isRunning = YES;
-        if (_scrollIndex == 1) {
-            _myLabel1.y = _originalCenterY;
-            _myLabel0.y = _originalDownY;
-            _myLabel0.alpha = 0.3;
+        
+        if (![self isInOneWholeLine:currentShowDes]) {
+            //第一个动画
+            if (_scrollIndex == 1) {
+                _myLabel1.y = _originalCenterY;
+                _myLabel0.y = _originalDownY;
+                _myLabel0.alpha = 0.3;
+                
+            }else if(_scrollIndex == 2){
+                
+                _myLabel0.y = _originalCenterY;
+                
+                _myLabel1.y = _originalDownY;
+                _myLabel1.alpha = 0.3;
+                
+                _scrollIndex = 0;
+            }
             
-        }else if(_scrollIndex == 2){
+        }else{
+            NSLog(@"执行第二个动画");
+            if (_scrollIndex == 1) {
+                _myLabel1.y = _originalCenterY;
+
+                [UIView animateWithDuration:0.4 delay:0.3f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                    _myLabel0.alpha = 0.2;
+                    _myLabel0.y = _originalDownY;
+                    
+                } completion:^(BOOL finished) {
+                    _myLabel0.alpha = 0;
+                    _myLabel0.y = _originalTopY;
+                    _myLabel0.alpha = 1;
+                    currentShowDes = _myLabel1.text;
+                    
+                    isRunning = NO;
+                }];
+                
+            }else if(_scrollIndex == 2){
+                
+                _myLabel0.y = _originalCenterY;
+                
+                [UIView animateWithDuration:0.4 delay:0.3f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                    _myLabel1.alpha = 0.2;
+                    _myLabel1.y = _originalDownY;
+                    
+                } completion:^(BOOL finished) {
+                    _myLabel1.alpha = 0;
+                    _myLabel1.y = _originalTopY;
+                    _myLabel1.alpha = 1;
+                    currentShowDes = _myLabel0.text;
+                    
+                    isRunning = NO;
+                    
+                }];
+                
+                _scrollIndex = 0;
+                
+            }
             
-            _myLabel1.y = _originalDownY;
-            _myLabel0.y = _originalCenterY;
-            _myLabel1.alpha = 0.3;
-            
-            _scrollIndex = 0;
         }
+
+        
+        
+        NSLog(@"%@",currentShowDes);
+//        if ([self isInOneWholeLine:currentShowDes]) {
+//            NSLog(@"执行第二个动画");
+//        }
         
     } completion:^(BOOL finished) {
         
-        if (_scrollIndex == 1) {
-            _myLabel0.alpha = 0;
-            _myLabel0.y = _originalTopY;
-            _myLabel0.alpha = 1;
-            
-        }else if(_scrollIndex == 0){
-            _myLabel1.alpha = 0;
-            _myLabel1.y = _originalTopY;
-            _myLabel1.alpha = 1;
+        if (![self isInOneWholeLine:currentShowDes]) {
+            //第一个动画
+            if (_scrollIndex == 1) {
+                _myLabel0.alpha = 0;
+                _myLabel0.y = _originalTopY;
+                _myLabel0.alpha = 1;
+                
+                currentShowDes = _myLabel1.text;
+            }else if(_scrollIndex == 0){
+                _myLabel1.alpha = 0;
+                _myLabel1.y = _originalTopY;
+                _myLabel1.alpha = 1;
+                currentShowDes = _myLabel0.text;
+            }
+            isRunning = NO;
+        }else{
+            //第二个动画
         }
-        
-        isRunning = NO;
         
     }];
 }
@@ -171,8 +232,9 @@ static CGFloat const labelW = 113;
 
 -(void)setMyFirstShowLabelDes:(NSString *)myFirstShowLabelDes{
     _myFirstShowLabelDes = myFirstShowLabelDes;
+    currentShowDes = myFirstShowLabelDes;
+    _myLabel0.text = [self getRealShowStr:myFirstShowLabelDes];
     
-    _myLabel0.text = [self getRealShowStr:myFirstShowLabelDes];;
 }
 
 
@@ -198,7 +260,9 @@ static CGFloat const labelW = 113;
 }
 
 
-
+- (BOOL)isInOneWholeLine:(NSString *)str{
+    return (str.length <= 10);
+}
 
 - (NSString *)getRealShowStr:(NSString *)str{
     if (str.length <= 9) {
