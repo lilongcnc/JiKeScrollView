@@ -112,7 +112,7 @@
 
 
 
-//执行动画
+//初始化数据
 - (void)setFisrtJikeScrollImageData:(NSArray *)data{
     LxDBAnyVar(data);
     for (int i = 0; i < data.count; i++) {
@@ -128,18 +128,35 @@
     }
 }
 
-
+//执行动画
 - (void)runJikeScrollImageView:(NSArray *)data{
     for (int i = 0; i < data.count; i++) {
-        JiKeSignalScrollView *signView = _myShowViewArray[i];
-        signView.myNextShowImageLink = data[i];
         
+        void(^tempDelayRunBlock)() = ^(){
+            JiKeSignalScrollView *signView = _myShowViewArray[i];
+            signView.myNextShowImageLink = data[i];
+        };
+        [self delayRun:tempDelayRunBlock index:i];
     }
 }
+
 - (void)runJikeScrollLabelView:(NSArray *)data{
     for (int i = 0; i < data.count; i++) {
-        JiKeSignalScrollView *signView = _myShowViewArray[i];
-        signView.myNextShowLabelDes = data[i];
+        void(^tempDelayRunBlock)() = ^(){
+            JiKeSignalScrollView *signView = _myShowViewArray[i];
+            signView.myNextShowLabelDes = data[i];
+        };
+        
+        [self delayRun:tempDelayRunBlock index:i];
     }
 }
+
+//延迟执行代码
+- (void)delayRun:(void (^)())delayRunBlock index:(int)index{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1*index * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (delayRunBlock)
+            delayRunBlock();
+    });
+}
+
 @end
