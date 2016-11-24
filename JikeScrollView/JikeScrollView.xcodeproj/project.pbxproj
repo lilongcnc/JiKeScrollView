@@ -206,7 +206,10 @@
 		89405B7D1DE496560098D1DC /* JiKeScrollShow */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
 				89A7249B1DE6E6F000D01DD1 /* tempBack.png */,
+=======
+>>>>>>> Stashed changes
 				89DA116D1DE5F2A1001D7252 /* JiKeAnimationStatus.h */,
 				89405BA61DE496890098D1DC /* JiKeScrollImageView.h */,
 				89405BA71DE496890098D1DC /* JiKeScrollImageView.m */,
