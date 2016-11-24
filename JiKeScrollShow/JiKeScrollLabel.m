@@ -7,6 +7,7 @@
 //
 
 #import "JiKeScrollLabel.h"
+#import "JiKeAnimationStatus.h"
 #import "UIView+Frame.h"
 #import "Cionfig.h"
 
@@ -24,7 +25,6 @@
 @implementation JiKeScrollLabel
 {
     int _scrollIndex;
-    BOOL isRunning;
     
     CGFloat _originalTopY;
     CGFloat _originalCenterY;
@@ -32,17 +32,10 @@
     
     NSString *currentShowDes;
     
+    //动画执行标记
+    JiKeAnimationStatus animStatus;
 }
 
-
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        //初始化控件
-        [self initSubViews];
-    }
-    return self;
-}
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -56,12 +49,10 @@
 - (NSArray *)myLabelArray
 {
     if (!_myLabelArray) {
-        
         UILabel *label0 = [[UILabel alloc] init];
         UILabel *label1 = [[UILabel alloc] init];
         _myLabelArray = [NSArray arrayWithObjects:label0,label1, nil];
     }
-    
     return _myLabelArray;
 }
 
@@ -92,7 +83,6 @@
         label.frame = (CGRect){0,_originalCenterY,labelW,labelH};
         label.numberOfLines = 0;
         label.font = labelFont;
-//        label.backgroundColor = [UIColor greenColor];
         [backView addSubview:label];
         label;
     });
@@ -102,18 +92,15 @@
         label.frame = (CGRect){0,_originalTopY,labelW,labelH};
         label.numberOfLines = 0;
         label.font = labelFont;
-//        label.backgroundColor = [UIColor yellowColor];
         [backView addSubview:label];
         label;
     });
     
     _scrollIndex = 0;
-    
 }
 
 
 - (void)beiginScrollDown{
-    
     _scrollIndex++;
     [self runAnimation];
 }
@@ -124,12 +111,9 @@
     _myLabel1.alpha = 1;
 
     void (^changeBlock)() = ^(){
+        animStatus = STATUS_RUNNING;
         
-        NSLog(@"%@",currentShowDes);
-        
-        isRunning = YES;
         if ([self isInTwoWholeLine:currentShowDes]) {
-            NSLog(@"--------- 开始0");
             //第一个动画
             if (_scrollIndex == 1) {
                 _myLabel1.y = _originalCenterY;
@@ -150,8 +134,6 @@
         }else{
             //叠影动画逻辑
             //当前正在显示的label的动画执行时间比即将显示的label的动画执行时间延迟一些执行,产生叠影效果
-            NSLog(@"动画2");
-
             if (_scrollIndex == 1) {
                 
                 _myLabel1.y = _originalCenterY;
@@ -204,17 +186,11 @@
                 
                 currentShowDes = _myLabel0.text;
             }
-            NSLog(@"--------- 结束0");
-            
-            isRunning = NO;
+            animStatus = STATUS_END;
         }
-        
-        
     };
-
     
     [self doAnimationWithDuration:0.6f delay:0.1f change:changeBlock completion:completionBlock];
-    
 }
 
 
@@ -238,19 +214,17 @@
 -(void)setMyNextShowLabelDes:(NSString *)myNextShowLabelDes{
     
     //保证动画当前顺序执行
-    if (isRunning){
-        NSLog(@"---------------------------  Label动画ing ------------------------");
+    if (animStatus == STATUS_RUNNING)
         return;
-    }
 
     //数据处理
     if(_myFirstShowLabelDesArray == nil || _myFirstShowLabelDesArray.count < 2)
         ULog(@"还是设置完整图片描述吧");
-    
     _myNextShowLabelDes = myNextShowLabelDes;
     
     [self beiginScrollDown];
 }
+
 
 
 - (BOOL)isInTwoWholeLine:(NSString *)str{
@@ -258,13 +232,12 @@
     return labelSize.width>self.width;
 }
 
+
 - (NSString *)getRealShowStr:(NSString *)str{
     CGSize labelSize = [LLTool getSizeWithStrig:str font:LLLabelFont maxSize:(CGSize){MAXFLOAT,MAXFLOAT}];
-
     if (labelSize.width <= self.frame.size.width) {
         str = [str stringByAppendingString:@"\n"];
     }
-    
     return str;
 }
 

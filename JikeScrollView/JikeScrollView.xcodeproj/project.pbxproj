@@ -285,10 +285,10 @@
 				89F2693B1DE7306C000495EF /* JiKeScrollImageView.m */,
 				89F2693C1DE7306C000495EF /* JiKeScrollLabel.h */,
 				89F2693D1DE7306C000495EF /* JiKeScrollLabel.m */,
-				89F2693E1DE7306C000495EF /* JiKeScrollView.h */,
-				89F2693F1DE7306C000495EF /* JiKeScrollView.m */,
 				89F269401DE7306C000495EF /* JiKeSignalScrollView.h */,
 				89F269411DE7306C000495EF /* JiKeSignalScrollView.m */,
+				89F2693E1DE7306C000495EF /* JiKeScrollView.h */,
+				89F2693F1DE7306C000495EF /* JiKeScrollView.m */,
 				89F269481DE730C5000495EF /* tempBack.png */,
 			);
 			name = JiKeScrollShow;

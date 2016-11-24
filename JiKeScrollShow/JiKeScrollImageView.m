@@ -7,6 +7,7 @@
 //
 
 #import "JiKeScrollImageView.h"
+#import "JiKeAnimationStatus.h"
 #import "UIView+Frame.h"
 #import "Cionfig.h"
 
@@ -22,22 +23,15 @@
 
 @implementation JiKeScrollImageView{
     int _scrollIndex;
-    BOOL isRunning;
     
     CGFloat _originalTopY;
     CGFloat _originalCenterY;
     CGFloat _originalDownY;
     
+    //动画执行标记
+    JiKeAnimationStatus animStatus;
 }
 
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        //初始化控件
-        [self initSubViews];
-    }
-    return self;
-}
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -53,8 +47,6 @@
 - (NSArray *)myImageViewArray
 {
     if (!_myImageViewArray) {
-        
-        
         UIImageView *iconView0 = [[UIImageView alloc] init];
         iconView0.image = [UIImage imageNamed:@"tempBack"];
         iconView0.layer.cornerRadius = 5;
@@ -131,8 +123,8 @@
 - (void)runAnimation{
     
     void (^changeBlock)() = ^(){
-        isRunning = YES;
-        //        NSLog(@"开始执行");
+        animStatus = STATUS_RUNNING;
+        
         if (_scrollIndex == 1) {
             _myImageView1.y = _originalCenterY;
             _myImageView0.y = _originalDownY;
@@ -167,7 +159,7 @@
             _myCoverView.alpha = 0.f;
             _myCoverView.y =_originalCenterY;
             
-            isRunning = NO;
+            animStatus = STATUS_END;
         }
     };
     
@@ -197,7 +189,7 @@
 //在设置myFirstShowImageLink之后,传入后自动调用下一个张操作
 -(void)setMyNextShowImageLink:(NSString *)myNextShowImageLink{
     //保证动画当前顺序执行
-    if (isRunning)
+    if (animStatus == STATUS_RUNNING)
         return;
     
     //处理数据

@@ -41,7 +41,6 @@
     [self.view addSubview:bkIconView];
     
     //滚动图
-    
     _myJikeScrollView = ({
         JiKeScrollView *scrollView = [[JiKeScrollView alloc] initWithFrame:[self getScrollViewFrame]];
         [self.view addSubview:scrollView];
@@ -91,7 +90,6 @@
     _myJikeScrollView.myNextShowLabelDesArray = self.tempImageDesDataArray[dataShowIndex];
     
     dataShowIndex++;
-    NSLog(@"- %d",dataShowIndex);
 }
 
 

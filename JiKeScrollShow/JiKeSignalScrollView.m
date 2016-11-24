@@ -17,13 +17,10 @@
 @property (nonatomic,strong) JiKeScrollImageView *myJiKeScrollImageView;
 @property (nonatomic,strong) JiKeScrollLabel *myJiKeScrollLabel;
 
-
 @property (nonatomic,strong) UIView *mySignleShowView;
 
 //模拟数据
 @property (nonatomic,strong) NSArray *tempDataArray;
-
-
 @end
 
 
@@ -52,10 +49,6 @@
     });
     
     
-    NSLog(@"------------------------- JikeSignalScrollView  --------------------------");
-    LxDBAnyVar(self.frame);
-    LxDBAnyVar(LabelSize);
-    
     //滚动文字
     _myJiKeScrollLabel = ({
         CGFloat scrollLabelY = self.frame.size.height - LabelSize.height*2 - LLTBMargin;
@@ -75,7 +68,6 @@
 
 -(void)setMyFirstShowImageLinkArray:(NSArray *)myFirstShowImageLinkArray{
     _myJiKeScrollImageView.myFirstShowImageLinkArray = myFirstShowImageLinkArray;
-    
 }
 
 
@@ -83,9 +75,7 @@
 //执行下一次显示动画
 -(void)setMyNextShowLabelDes:(NSString *)myNextShowLabelDes{
     _myJiKeScrollLabel.myNextShowLabelDes = myNextShowLabelDes;
-
 }
-
 
 -(void)setMyNextShowImageLink:(NSString *)myNextShowImageLink{
     _myJiKeScrollImageView.myNextShowImageLink = myNextShowImageLink;
