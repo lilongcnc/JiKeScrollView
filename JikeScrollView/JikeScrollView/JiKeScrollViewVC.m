@@ -23,29 +23,41 @@
 @implementation JiKeScrollViewVC
 {
     int dataShowIndex;
-    
 }
+
 
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.alpha = 0;
     self.view.backgroundColor = [UIColor whiteColor];
     
     LxDBAnyVar(LLScreenWidth);
     
-    UIImageView *bkIconView = [[UIImageView alloc] initWithFrame:(CGRect){LLScreenWidth,LLScreenHeight}];
-    bkIconView.image = [UIImage imageNamed:@"BK"];
+    UIImageView *bkIconView = [[UIImageView alloc] initWithFrame:(CGRect){0,0,LLScreenWidth,LLScreenHeight}];
+    bkIconView.image = [UIImage imageNamed:@"background.png"];
     [self.view addSubview:bkIconView];
     
     //滚动图
+    
     _myJikeScrollView = ({
-        JiKeScrollView *scrollView = [[JiKeScrollView alloc] initWithFrame:(CGRect){0,100,LLScreenWidth,151.298625}];
-        //        scrollView.backgroundColor = [UIColor greenColor];
+        JiKeScrollView *scrollView = [[JiKeScrollView alloc] initWithFrame:[self getScrollViewFrame]];
+        scrollView.backgroundColor = [UIColor greenColor];
         [self.view addSubview:scrollView];
         scrollView;
     });
+    
+    //换一换按钮
+    UIButton *button = [[UIButton alloc] initWithFrame:[self getButtonFrame]];
+    [button  setTitle:@"换一换" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont italicSystemFontOfSize:15];
+    button.layer.cornerRadius = LLScreenWidth == 320 ? 15 : 20;
+    button.layer.borderWidth = 1;
+    [button addTarget:self action:@selector(btnOnClick) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.view addSubview:button];
     
     
     //初始化假数据
@@ -60,6 +72,9 @@
                                                    @[@"右边初始描述文字5",@"右边初始描述文字6"]
                                                    ];
     
+    
+  
+
     
 //    [NSTimer scheduledTimerWithTimeInterval:0.5f
 //                                     target:self
@@ -79,8 +94,6 @@
     dataShowIndex++;
     NSLog(@"- %d",dataShowIndex);
 }
-
-
 
 
 - (NSArray *)tempImageDesDataArray
@@ -114,5 +127,28 @@
     return _tempImageLinkDataArray;
 }
 
+
+- (CGRect)getScrollViewFrame{
+    CGRect frame;
+    if (LLScreenWidth == 320)
+        frame = (CGRect){0,107,LLScreenWidth,151.298625};
+    else if (LLScreenWidth == 375)
+        frame = (CGRect){0,125,LLScreenWidth,169.630125};
+    else
+        frame = (CGRect){0,110,LLScreenWidth,182.628825};
+    return frame;
+}
+
+
+- (CGRect)getButtonFrame{
+    CGRect frame;
+    if (LLScreenWidth == 320)
+        frame = (CGRect){(LLScreenWidth-220)*0.5, _myJikeScrollView.bottom+10, 220, 30};
+    else if (LLScreenWidth == 375)
+        frame = (CGRect){(LLScreenWidth-220)*0.5, _myJikeScrollView.bottom+20, 220, 35};
+    else
+        frame = (CGRect){(LLScreenWidth-220)*0.5, _myJikeScrollView.bottom+5, 220, 35};
+    return frame;
+}
 
 @end

@@ -42,5 +42,6 @@
 
 
 #import "LxDBAnything.h"
+#import "UIView+Frame.h"
 
 #endif /* Cionfig_h */

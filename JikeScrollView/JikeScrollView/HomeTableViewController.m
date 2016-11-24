@@ -45,7 +45,9 @@ static NSString *cellFlag= @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellFlag forIndexPath:indexPath];
-    cell.textLabel.text = _titleArray[indexPath.row];
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    cell.textLabel.text = [_titleArray[indexPath.row] stringByAppendingString:@" - 手势返回"];
     return cell;
 }
 

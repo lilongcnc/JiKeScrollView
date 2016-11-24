@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89159B811DE719CF007411CB /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89159B7F1DE719CF007411CB /* background@2x.png */; };
+		89159B821DE719CF007411CB /* background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89159B801DE719CF007411CB /* background@3x.png */; };
 		89405B4C1DE4963A0098D1DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405B4B1DE4963A0098D1DC /* main.m */; };
 		89405B4F1DE4963A0098D1DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405B4E1DE4963A0098D1DC /* AppDelegate.m */; };
 		89405B551DE4963A0098D1DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89405B531DE4963A0098D1DC /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89159B7F1DE719CF007411CB /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		89159B801DE719CF007411CB /* background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@3x.png"; sourceTree = "<group>"; };
 		89405B471DE4963A0098D1DC /* JiKeScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiKeScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89405B4B1DE4963A0098D1DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		89405B4D1DE4963A0098D1DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -206,10 +210,6 @@
 		89405B7D1DE496560098D1DC /* JiKeScrollShow */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< Updated upstream
-				89A7249B1DE6E6F000D01DD1 /* tempBack.png */,
-=======
->>>>>>> Stashed changes
 				89DA116D1DE5F2A1001D7252 /* JiKeAnimationStatus.h */,
 				89405BA61DE496890098D1DC /* JiKeScrollImageView.h */,
 				89405BA71DE496890098D1DC /* JiKeScrollImageView.m */,
@@ -226,6 +226,8 @@
 		89405B7E1DE496560098D1DC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				89159B7F1DE719CF007411CB /* background@2x.png */,
+				89159B801DE719CF007411CB /* background@3x.png */,
 				89A108921DE5920A00C4066F /* LxDBAnything.h */,
 				89A108721DE536B600C4066F /* 0.png */,
 				89405B7F1DE496560098D1DC /* 1.png */,
@@ -396,6 +398,7 @@
 				89405B951DE496560098D1DC /* 11.png in Resources */,
 				89A7249C1DE6E6F000D01DD1 /* tempBack.png in Resources */,
 				89405B961DE496560098D1DC /* 12.png in Resources */,
+				89159B821DE719CF007411CB /* background@3x.png in Resources */,
 				89405BA01DE496560098D1DC /* 6.png in Resources */,
 				89405BA21DE496560098D1DC /* 8.png in Resources */,
 				89405B9D1DE496560098D1DC /* 3.png in Resources */,
@@ -410,6 +413,7 @@
 				89405B971DE496560098D1DC /* 13.png in Resources */,
 				89405B9F1DE496560098D1DC /* 5.png in Resources */,
 				89405B571DE4963A0098D1DC /* Assets.xcassets in Resources */,
+				89159B811DE719CF007411CB /* background@2x.png in Resources */,
 				89405B551DE4963A0098D1DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

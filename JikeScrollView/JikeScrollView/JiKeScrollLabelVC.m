@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.alpha = 0;
+
 }
 
 - (void)didReceiveMemoryWarning {
