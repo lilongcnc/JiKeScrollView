@@ -39,15 +39,14 @@
 		89405BA21DE496560098D1DC /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 89405B8E1DE496560098D1DC /* 8.png */; };
 		89405BA31DE496560098D1DC /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 89405B8F1DE496560098D1DC /* 9.png */; };
 		89405BA41DE496560098D1DC /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405B921DE496560098D1DC /* UIView+Frame.m */; };
-		89405BAA1DE496890098D1DC /* JiKeScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405BA71DE496890098D1DC /* JiKeScrollImageView.m */; };
-		89405BAB1DE496890098D1DC /* JiKeScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 89405BA91DE496890098D1DC /* JiKeScrollLabel.m */; };
 		89A108731DE536B600C4066F /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A108721DE536B600C4066F /* 0.png */; };
 		89A108751DE5377600C4066F /* 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A108741DE5377600C4066F /* 17.png */; };
-		89A108781DE54CB600C4066F /* JiKeSignalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A108771DE54CB600C4066F /* JiKeSignalScrollView.m */; };
-		89A108911DE590F000C4066F /* JiKeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A108901DE590F000C4066F /* JiKeScrollView.m */; };
-		89A7249C1DE6E6F000D01DD1 /* tempBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A7249B1DE6E6F000D01DD1 /* tempBack.png */; };
 		89A724A21DE6EF3700D01DD1 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A724A11DE6EF3700D01DD1 /* HomeTableViewController.m */; };
 		89A724A61DE6F5D700D01DD1 /* JiKeScrollViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A724A51DE6F5D700D01DD1 /* JiKeScrollViewVC.m */; };
+		89F269431DE7306C000495EF /* JiKeScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F2693B1DE7306C000495EF /* JiKeScrollImageView.m */; };
+		89F269441DE7306C000495EF /* JiKeScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F2693D1DE7306C000495EF /* JiKeScrollLabel.m */; };
+		89F269451DE7306C000495EF /* JiKeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F2693F1DE7306C000495EF /* JiKeScrollView.m */; };
+		89F269461DE7306C000495EF /* JiKeSignalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F269411DE7306C000495EF /* JiKeSignalScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,23 +111,23 @@
 		89405B901DE496560098D1DC /* Cionfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cionfig.h; sourceTree = "<group>"; };
 		89405B911DE496560098D1DC /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		89405B921DE496560098D1DC /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		89405BA61DE496890098D1DC /* JiKeScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiKeScrollImageView.h; sourceTree = "<group>"; };
-		89405BA71DE496890098D1DC /* JiKeScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeScrollImageView.m; sourceTree = "<group>"; };
-		89405BA81DE496890098D1DC /* JiKeScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiKeScrollLabel.h; sourceTree = "<group>"; };
-		89405BA91DE496890098D1DC /* JiKeScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeScrollLabel.m; sourceTree = "<group>"; };
 		89A108721DE536B600C4066F /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		89A108741DE5377600C4066F /* 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17.png; sourceTree = "<group>"; };
-		89A108761DE54CB600C4066F /* JiKeSignalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JiKeSignalScrollView.h; path = JikeScrollView/JiKeScrollShow/JiKeSignalScrollView.h; sourceTree = SOURCE_ROOT; };
-		89A108771DE54CB600C4066F /* JiKeSignalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JiKeSignalScrollView.m; path = JikeScrollView/JiKeScrollShow/JiKeSignalScrollView.m; sourceTree = SOURCE_ROOT; };
-		89A1088F1DE590F000C4066F /* JiKeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JiKeScrollView.h; path = JikeScrollView/JiKeScrollShow/JiKeScrollView.h; sourceTree = SOURCE_ROOT; };
-		89A108901DE590F000C4066F /* JiKeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JiKeScrollView.m; path = JikeScrollView/JiKeScrollShow/JiKeScrollView.m; sourceTree = SOURCE_ROOT; };
 		89A108921DE5920A00C4066F /* LxDBAnything.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LxDBAnything.h; sourceTree = "<group>"; };
-		89A7249B1DE6E6F000D01DD1 /* tempBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tempBack.png; path = JikeScrollView/JiKeScrollShow/tempBack.png; sourceTree = SOURCE_ROOT; };
 		89A724A01DE6EF3700D01DD1 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTableViewController.h; path = JikeScrollView/HomeTableViewController.h; sourceTree = SOURCE_ROOT; };
 		89A724A11DE6EF3700D01DD1 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewController.m; path = JikeScrollView/HomeTableViewController.m; sourceTree = SOURCE_ROOT; };
 		89A724A41DE6F5D700D01DD1 /* JiKeScrollViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JiKeScrollViewVC.h; path = JikeScrollView/JiKeScrollViewVC.h; sourceTree = SOURCE_ROOT; };
 		89A724A51DE6F5D700D01DD1 /* JiKeScrollViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JiKeScrollViewVC.m; path = JikeScrollView/JiKeScrollViewVC.m; sourceTree = SOURCE_ROOT; };
-		89DA116D1DE5F2A1001D7252 /* JiKeAnimationStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JiKeAnimationStatus.h; sourceTree = "<group>"; };
+		89F269391DE7306C000495EF /* JiKeAnimationStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiKeAnimationStatus.h; sourceTree = "<group>"; };
+		89F2693A1DE7306C000495EF /* JiKeScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiKeScrollImageView.h; sourceTree = "<group>"; };
+		89F2693B1DE7306C000495EF /* JiKeScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeScrollImageView.m; sourceTree = "<group>"; };
+		89F2693C1DE7306C000495EF /* JiKeScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiKeScrollLabel.h; sourceTree = "<group>"; };
+		89F2693D1DE7306C000495EF /* JiKeScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeScrollLabel.m; sourceTree = "<group>"; };
+		89F2693E1DE7306C000495EF /* JiKeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiKeScrollView.h; sourceTree = "<group>"; };
+		89F2693F1DE7306C000495EF /* JiKeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeScrollView.m; sourceTree = "<group>"; };
+		89F269401DE7306C000495EF /* JiKeSignalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiKeSignalScrollView.h; sourceTree = "<group>"; };
+		89F269411DE7306C000495EF /* JiKeSignalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiKeSignalScrollView.m; sourceTree = "<group>"; };
+		89F269481DE730C5000495EF /* tempBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempBack.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +178,8 @@
 		89405B491DE4963A0098D1DC /* JiKeScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				89F269381DE7306C000495EF /* JiKeScrollShow */,
 				89A724A31DE6F54B00D01DD1 /* MainVC */,
-				89405B7D1DE496560098D1DC /* JiKeScrollShow */,
 				89405B7E1DE496560098D1DC /* Sources */,
 				89405BA51DE496630098D1DC /* Others */,
 				89405B4A1DE4963A0098D1DC /* Supporting Files */,
@@ -212,22 +211,6 @@
 				89405B711DE4963A0098D1DC /* Info.plist */,
 			);
 			path = JiKeScrollViewUITests;
-			sourceTree = "<group>";
-		};
-		89405B7D1DE496560098D1DC /* JiKeScrollShow */ = {
-			isa = PBXGroup;
-			children = (
-				89DA116D1DE5F2A1001D7252 /* JiKeAnimationStatus.h */,
-				89405BA61DE496890098D1DC /* JiKeScrollImageView.h */,
-				89405BA71DE496890098D1DC /* JiKeScrollImageView.m */,
-				89405BA81DE496890098D1DC /* JiKeScrollLabel.h */,
-				89405BA91DE496890098D1DC /* JiKeScrollLabel.m */,
-				89A108761DE54CB600C4066F /* JiKeSignalScrollView.h */,
-				89A108771DE54CB600C4066F /* JiKeSignalScrollView.m */,
-				89A1088F1DE590F000C4066F /* JiKeScrollView.h */,
-				89A108901DE590F000C4066F /* JiKeScrollView.m */,
-			);
-			path = JiKeScrollShow;
 			sourceTree = "<group>";
 		};
 		89405B7E1DE496560098D1DC /* Sources */ = {
@@ -292,6 +275,24 @@
 				89A724A11DE6EF3700D01DD1 /* HomeTableViewController.m */,
 			);
 			name = MainVC;
+			sourceTree = "<group>";
+		};
+		89F269381DE7306C000495EF /* JiKeScrollShow */ = {
+			isa = PBXGroup;
+			children = (
+				89F269391DE7306C000495EF /* JiKeAnimationStatus.h */,
+				89F2693A1DE7306C000495EF /* JiKeScrollImageView.h */,
+				89F2693B1DE7306C000495EF /* JiKeScrollImageView.m */,
+				89F2693C1DE7306C000495EF /* JiKeScrollLabel.h */,
+				89F2693D1DE7306C000495EF /* JiKeScrollLabel.m */,
+				89F2693E1DE7306C000495EF /* JiKeScrollView.h */,
+				89F2693F1DE7306C000495EF /* JiKeScrollView.m */,
+				89F269401DE7306C000495EF /* JiKeSignalScrollView.h */,
+				89F269411DE7306C000495EF /* JiKeSignalScrollView.m */,
+				89F269481DE730C5000495EF /* tempBack.png */,
+			);
+			name = JiKeScrollShow;
+			path = ../../JiKeScrollShow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,7 +409,6 @@
 				89405B9E1DE496560098D1DC /* 4.png in Resources */,
 				89A108731DE536B600C4066F /* 0.png in Resources */,
 				89405B951DE496560098D1DC /* 11.png in Resources */,
-				89A7249C1DE6E6F000D01DD1 /* tempBack.png in Resources */,
 				89405B961DE496560098D1DC /* 12.png in Resources */,
 				89159B821DE719CF007411CB /* background@3x.png in Resources */,
 				89159B931DE72A90007411CB /* JiKeScrollLabelVC.xib in Resources */,
@@ -452,17 +452,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89A108911DE590F000C4066F /* JiKeScrollView.m in Sources */,
 				89159B921DE72A90007411CB /* JiKeScrollLabelVC.m in Sources */,
+				89F269451DE7306C000495EF /* JiKeScrollView.m in Sources */,
+				89F269431DE7306C000495EF /* JiKeScrollImageView.m in Sources */,
 				89405BA41DE496560098D1DC /* UIView+Frame.m in Sources */,
+				89F269461DE7306C000495EF /* JiKeSignalScrollView.m in Sources */,
 				89A724A61DE6F5D700D01DD1 /* JiKeScrollViewVC.m in Sources */,
-				89405BAB1DE496890098D1DC /* JiKeScrollLabel.m in Sources */,
 				89159B851DE7255F007411CB /* LLTool.m in Sources */,
 				89A724A21DE6EF3700D01DD1 /* HomeTableViewController.m in Sources */,
+				89F269441DE7306C000495EF /* JiKeScrollLabel.m in Sources */,
 				89405B4F1DE4963A0098D1DC /* AppDelegate.m in Sources */,
-				89405BAA1DE496890098D1DC /* JiKeScrollImageView.m in Sources */,
 				89405B4C1DE4963A0098D1DC /* main.m in Sources */,
-				89A108781DE54CB600C4066F /* JiKeSignalScrollView.m in Sources */,
 				89159B8D1DE72A56007411CB /* JiKeScrollImageViewVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
