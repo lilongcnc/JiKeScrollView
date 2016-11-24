@@ -29,25 +29,7 @@
 
 @implementation JiKeSignalScrollView{
     int dataShowIndex;
-    
 }
-//
-//- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-//    if (self = [super initWithCoder:aDecoder]) {
-//        //初始化控件
-//        [self initSubViews];
-//    }
-//    return self;
-//}
-//
-////不要xxx.frame = GRectmake()这样设置frame
-//-(instancetype)initWithFrame:(CGRect)frame{
-//    if (self = [super initWithFrame:frame]) {
-//        //初始化控件
-//        [self initSubViews];
-//    }
-//    return self;
-//}
 
 -(instancetype)initWithFrame:(CGRect)frame withScrollLabelSize:(CGSize)labelSize{
     
@@ -61,18 +43,6 @@
 
 
 - (void)initSubViewsWithLabelSize:(CGSize)LabelSize{
-    
-//    CGFloat TBMargin = 10;
-//    CGFloat margin = 10;
-//    CGFloat showImageHeight = 110;
-//    CGFloat showLabelHeight = 30;
-//    CGFloat showViewHeight = TBMargin*2 + margin + showImageHeight + showLabelHeight;
-    
-    //显示单组的View
-//    _mySignleShowView = ({
-//        showView;
-//    });
-    
     
     //滚动图
     _myJiKeScrollImageView = ({

@@ -56,13 +56,8 @@
 {
     if (!_myLabelArray) {
         
-
         UILabel *label0 = [[UILabel alloc] init];
-//        label0.text = [self getRealShowStr:@"这些微博的评论更好看"];
-        
         UILabel *label1 = [[UILabel alloc] init];
-//        label1.text = [self getRealShowStr:@"「看理想」系列视频更新提醒"];
-        
         _myLabelArray = [NSArray arrayWithObjects:label0,label1, nil];
     }
     
@@ -126,17 +121,13 @@
     
     _myLabel0.alpha = 1;
     _myLabel1.alpha = 1;
-    
-    
-    
-
 
     void (^changeBlock)() = ^(){
         
         NSLog(@"%@",currentShowDes);
         
         isRunning = YES;
-        if (![self isInOneWholeLine:currentShowDes]) {
+        if ([self isInTwoWholeLine:currentShowDes]) {
             NSLog(@"--------- 开始0");
             //第一个动画
             if (_scrollIndex == 1) {
@@ -261,8 +252,9 @@
 }
 
 
-- (BOOL)isInOneWholeLine:(NSString *)str{
-    return (str.length <= 10);
+- (BOOL)isInTwoWholeLine:(NSString *)str{
+    CGSize labelSize = [self getSizeWithStrig:str font:LLLabelFont maxSize:(CGSize){MAXFLOAT,MAXFLOAT}];
+    return labelSize.width>self.width;
 }
 
 - (NSString *)getRealShowStr:(NSString *)str{

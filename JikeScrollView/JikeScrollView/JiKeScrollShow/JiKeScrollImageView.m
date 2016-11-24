@@ -153,6 +153,7 @@
     
     
     void (^completionBlock)(BOOL) = ^(BOOL finished){
+        
         if(finished){
             if (_scrollIndex == 1) {
                 _myImageView0.y = _originalTopY;
@@ -169,7 +170,6 @@
             isRunning = NO;
         }
     };
-    
     
     [self doAnimation:changeBlock completion:completionBlock];
 
