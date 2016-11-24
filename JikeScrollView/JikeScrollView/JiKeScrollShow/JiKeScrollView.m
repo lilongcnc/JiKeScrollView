@@ -53,7 +53,7 @@
     LxDBAnyVar(LLScreenHeight);
     
     CGFloat singalScrollViewWidth = (LLScreenWidth - LLLRMargin*2 - LLverticalMargin*2)*0.3333;
-    CGSize labelSize = [self getSizeWithStrig:@"测试" font:LLLabelFont maxSize:(CGSize){singalScrollViewWidth,MAXFLOAT}];
+    CGSize labelSize = [LLTool getSizeWithStrig:@"测试" font:LLLabelFont maxSize:(CGSize){singalScrollViewWidth,MAXFLOAT}];
     CGFloat singalScrollViewHeight = LLTBMargin*2 + LLhorizontalMargin + singalScrollViewWidth + labelSize.height*2;
     
     LxDBAnyVar(labelSize);
@@ -70,11 +70,6 @@
 }
 
 
-- (CGSize)getSizeWithStrig:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize
-{
-    NSDictionary *attrs = @{NSFontAttributeName : font};
-    return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-}
 
 
 //处理首次传入的数据

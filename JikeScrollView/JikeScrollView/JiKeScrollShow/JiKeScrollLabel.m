@@ -10,6 +10,7 @@
 #import "UIView+Frame.h"
 #import "Cionfig.h"
 
+
 @interface JiKeScrollLabel ()
 
 
@@ -253,12 +254,12 @@
 
 
 - (BOOL)isInTwoWholeLine:(NSString *)str{
-    CGSize labelSize = [self getSizeWithStrig:str font:LLLabelFont maxSize:(CGSize){MAXFLOAT,MAXFLOAT}];
+    CGSize labelSize = [LLTool getSizeWithStrig:str font:LLLabelFont maxSize:(CGSize){MAXFLOAT,MAXFLOAT}];
     return labelSize.width>self.width;
 }
 
 - (NSString *)getRealShowStr:(NSString *)str{
-    CGSize labelSize = [self getSizeWithStrig:str font:LLLabelFont maxSize:(CGSize){MAXFLOAT,MAXFLOAT}];
+    CGSize labelSize = [LLTool getSizeWithStrig:str font:LLLabelFont maxSize:(CGSize){MAXFLOAT,MAXFLOAT}];
 
     if (labelSize.width <= self.frame.size.width) {
         str = [str stringByAppendingString:@"\n"];
@@ -269,10 +270,5 @@
 
 
 
-- (CGSize)getSizeWithStrig:(NSString *)text font:(UIFont *)font maxSize:(CGSize)maxSize
-{
-    NSDictionary *attrs = @{NSFontAttributeName : font};
-    return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-}
 
 @end

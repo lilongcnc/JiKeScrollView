@@ -44,7 +44,6 @@
     
     _myJikeScrollView = ({
         JiKeScrollView *scrollView = [[JiKeScrollView alloc] initWithFrame:[self getScrollViewFrame]];
-        scrollView.backgroundColor = [UIColor greenColor];
         [self.view addSubview:scrollView];
         scrollView;
     });
@@ -84,7 +83,7 @@
     
 }
 
-- (IBAction)btnOnClick {
+- (void)btnOnClick {
     
     dataShowIndex = dataShowIndex >= self.tempImageLinkDataArray.count ? 0 : dataShowIndex;
     
