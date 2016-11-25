@@ -11,7 +11,7 @@
 上边提到的文章地址:巴巴巴巴巴巴掌的[《手摸手教你写炫酷控件》](https://github.com/JeasonWong/JikeGallery) 
 
 ##实现效果
-![](http://upload-images.jianshu.io/upload_images/594219-17e6626c1ae14d7f.gif?imageMogr2/auto-orient/strip)
+![](http://www.lilongcnc.cc/lauren_picture/20161123/JikeScrollView.gif)
 
 ##实现说明
 执行动画效果是直接用的UIView自带的动画方法.
