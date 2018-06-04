@@ -1,5 +1,5 @@
 # JiKeScrollView
-模仿首页即刻滚动效果
+模仿即刻首页滚动效果
 
 - 简书地址：
 [《 仿『即刻』首页滚动效果》](http://www.jianshu.com/p/1b3ccfba1f6f)
