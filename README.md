@@ -15,7 +15,7 @@
 
 ## 实现说明
 执行动画效果是直接用的UIView自带的动画方法.
-我是图片滚动再写到文字滚动，然后再包含到外边的动态数据传入.所以整个**`JiKeScrollView`**的项目结构如下，每个文件都是一个单独的控件，都可以单独提取出来使用。
+我是图片滚动再写到文字滚动，然后再包含到外边的动态数据传入.所以整个`JiKeScrollView`的项目结构如下，每个文件都是一个单独的控件，都可以单独提取出来使用。
 ![](http://upload-images.jianshu.io/upload_images/594219-8be99cd7d49ed223.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
@@ -43,12 +43,12 @@
     _myJikeScrollView.myNextShowLabelDesArray = self.tempImageDesDataArray[dataShowIndex];
     
 
-其实我们仔细观察『即刻』点击'换一换',左边是有个圆形指针再转的,我想这个时候是在请求下下次我们要显示的数据.这样便可以保持每次次点击'换一换'之后能够马上`有数据滚动`.
+其实我们仔细观察『即刻』点击`换一换`,左边是有个圆形指针再转的,我想这个时候是在请求下下次我们要显示的数据.这样便可以保持每次次点击`换一换`之后能够马上`有数据滚动`.
 
 
 ### 其他
 
-因为完整代码有点多,所以Demo中分为了三部分,除了完整代码,还有是把基础组件单个使用的的**`JiKeScrollImageViewVC`**和**`JiKeScrollLabelVC`**.
+因为完整代码有点多,所以Demo中分为了三部分,除了完整代码,还有是把基础组件单个使用的的`JiKeScrollImageViewVC`和`JiKeScrollLabelVC`.
 
 ![JiKeScrollLabelVC](http://upload-images.jianshu.io/upload_images/594219-f0f5897e74bd616a.gif?imageMogr2/auto-orient/strip)
 ![JiKeScrollImageViewVC](http://upload-images.jianshu.io/upload_images/594219-3893820864ff4c70.gif?imageMogr2/auto-orient/strip)
